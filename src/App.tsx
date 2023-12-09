@@ -1,14 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
+import './index.css'
 
 function App() {
   return (
     <div>
-          {/* <Routes>
+          <Routes>
         <Route path="/" element={<Login />} />
-        </Routes> */}
+        </Routes>
 
-        <Login/>
+        {/* <Login/> */}
     </div>
   );
 }
