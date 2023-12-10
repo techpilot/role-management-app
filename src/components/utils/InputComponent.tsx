@@ -48,7 +48,7 @@ const InputComponent: React.FC<InputComponentProps> = ({
           className={
             error
               ? 'relative flex items-center bg-white border border-red-600 rounded-sm text-[#6B6666] outline-none'
-              : 'relative flex items-center bg-white rounded-sm text-[#6B6666] outline-none border border-[#8E0789]'
+              : 'relative flex items-center bg-white rounded-sm text-[#6B6666] outline-none border border-[#4682ba]'
           }
         >
           <input

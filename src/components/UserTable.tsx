@@ -22,15 +22,13 @@ const UserTable = () => {
   useEffect(() => {
     (async () => {
       const response = await axios.get("/users.json");
-      console.log(response);
       setUsers(response?.data);
     })();
   }, []);
-  console.log(users);
 
   return (
     <div className="w-full">
-      <div className="grid grid-cols-7 items-center text-[0.5rem] lg:text-xs bg-gray-50 p-2 lg:p-5 gap-28 md:gap-5 text-[#636872]">
+      <div className="grid grid-cols-7 items-center text-[0.5rem] lg:text-xs bg-gray-50 p-2 lg:p-5 gap-28 md:gap-5 text-[#4682ba]">
         <p className="text-left font-semibold min-w-max">ID</p>
         <p className="text-left font-semibold min-w-max">First Name</p>
         <p className="text-left font-semibold min-w-max">Last Name</p>
