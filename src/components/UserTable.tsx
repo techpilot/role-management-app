@@ -41,15 +41,15 @@ const UserTable = () => {
       {users?.map((user, index) => (
         <div
           key={index}
-          className="grid grid-cols-7 items-center text-[0.5rem] lg:text-[0.75rem] mb-[0.5rem] p-2 lg:p-5 gap-28 md:gap-5"
+          className="grid grid-cols-7 items-center text-[0.5rem] lg:text-xs mb-[0.5rem] p-2 lg:p-5 gap-28 md:gap-5"
         >
-          <p className="text-left">{user.id}</p>
-          <p className="text-left">{user.first_name}</p>
-          <p className="text-left">{user.last_name}</p>
-          <p className="text-left">{user.email}</p>
-          <p className="text-left">{user.gender}</p>
-          <p className="text-left">{user.ip_address}</p>
-          <p className="text-left">
+          <p className="text-left font-medium">{user.id}</p>
+          <p className="text-left font-medium">{user.first_name}</p>
+          <p className="text-left font-medium">{user.last_name}</p>
+          <p className="text-left font-medium">{user.email}</p>
+          <p className="text-left font-medium">{user.gender}</p>
+          <p className="text-left font-medium">{user.ip_address}</p>
+          <p className="text-left font-medium">
             {user.friends.map((friend) => (
               <>{`${friend.name}, `}</>
             ))}

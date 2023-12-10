@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "email": "jpenddreth0@census.gov",
+    "password": "12345@Er",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "email": "gfrediani1@senate.gov",
+    "password": "3898Re",
+    "role": "super_user"
+  },
+  {
+    "id": 3,
+    "email": "nbea2@imageshack.us",
+    "password": "onThe339",
+    "user": "user"
+  }
+]
