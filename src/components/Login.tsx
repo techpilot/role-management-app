@@ -41,7 +41,6 @@ const Login = () => {
 
     if (user) {
       const randomString = generateRandomString();
-      // console.log(randomString);
       localStorage.setItem("token", randomString);
       localStorage.setItem("role", user.role);
 

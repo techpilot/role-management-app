@@ -18,6 +18,8 @@ interface UserDataState {
 
 const UserTable = () => {
   const [users, setUsers] = useState<UserDataState[]>([]);
+  const token = localStorage.getItem("token");
+  const role = localStorage.getItem("role");
 
   useEffect(() => {
     (async () => {
@@ -32,9 +34,13 @@ const UserTable = () => {
         <p className="text-left font-semibold min-w-max">ID</p>
         <p className="text-left font-semibold min-w-max">First Name</p>
         <p className="text-left font-semibold min-w-max">Last Name</p>
-        <p className="text-left font-semibold min-w-max">Email</p>
+        {token && (role === "admin" || role === "super_user") && (
+          <p className="text-left font-semibold min-w-max">Email</p>
+        )}
         <p className="text-left font-semibold min-w-max">Gender</p>
-        <p className="text-left font-semibold min-w-max">IP Address</p>
+        {token && role === "admin" && (
+          <p className="text-left font-semibold min-w-max">IP Address</p>
+        )}
         <p className="text-left font-semibold min-w-max">Friends</p>
       </div>
 
@@ -46,9 +52,13 @@ const UserTable = () => {
           <p className="text-left font-medium">{user.id}</p>
           <p className="text-left font-medium">{user.first_name}</p>
           <p className="text-left font-medium">{user.last_name}</p>
-          <p className="text-left font-medium">{user.email}</p>
+          {token && (role === "admin" || role === "super_user") && (
+            <p className="text-left font-medium">{user.email}</p>
+          )}
           <p className="text-left font-medium">{user.gender}</p>
-          <p className="text-left font-medium">{user.ip_address}</p>
+          {token && role === "admin" && (
+            <p className="text-left font-medium">{user.ip_address}</p>
+          )}
           <p className="text-left font-medium">
             {user.friends.map((friend) => (
               <>{`${friend.name}, `}</>
