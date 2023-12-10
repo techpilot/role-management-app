@@ -42,13 +42,13 @@ const InputComponent: React.FC<InputComponentProps> = ({
 
   return (
     <div className="grid gap-1">
-      <p className="text-[#35480D] font-normal text-sm">{label}</p>
+      <p className="text-[#6B6666] font-normal text-sm">{label}</p>
       <div className="grid gap-1">
         <div
           className={
             error
-              ? 'relative flex items-center bg-white border border-red-600 rounded-sm text-[#35480D] outline-none mb-4'
-              : 'relative flex items-center bg-white rounded-sm text-[#35480D] outline-none border border-[#8E0789] mb-4'
+              ? 'relative flex items-center bg-white border border-red-600 rounded-sm text-[#6B6666] outline-none'
+              : 'relative flex items-center bg-white rounded-sm text-[#6B6666] outline-none border border-[#8E0789]'
           }
         >
           <input
@@ -61,6 +61,7 @@ const InputComponent: React.FC<InputComponentProps> = ({
           {password && passwordToggle()}
         </div>
       </div>
+      <p className="font-normal text-red-600 text-sm">{error}</p>
     </div>
   );
 };

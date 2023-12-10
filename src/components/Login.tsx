@@ -2,10 +2,36 @@ import { useNavigate } from "react-router-dom";
 import login_bg from "../assets/login_bg.png";
 import Button from "./utils/Button";
 import InputComponent from "./utils/InputComponent";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  email: yup.string().required("Email field cannot be empty"),
+  password: yup.string().required("Password field cannot be empty"),
+});
 
 const Login = () => {
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
+  const {
+    getValues,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+    criteriaMode: "all",
+    reValidateMode: "onSubmit",
+    mode: "onChange",
+  });
+
+  const onSubmit = async () => {
+    const data = getValues();
+    console.log(data);
+    navigate("/users");
+  };
+
   return (
     <div className="flex flex-col-reverse lg:flex-row justify-between h-[100vh]">
       <div className="relative flex flex-col h-full justify-between w-[100%] text-gray-700 overflow-x-hidden">
@@ -17,12 +43,19 @@ const Login = () => {
             Sign in to your account here
           </p>
           <form
-            // onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(onSubmit)}
             className="flex-1 flex flex-col justify-between items-center"
           >
             <div className="w-[18rem] md:w-[30rem] flex flex-col gap-2 md:gap-5">
-              <InputComponent label={"Email"} type={"email"} />
               <InputComponent
+                error={errors?.email?.message}
+                register={register("email")}
+                label={"Email"}
+                type={"email"}
+              />
+              <InputComponent
+                error={errors?.password?.message}
+                register={register("password")}
                 label={"Password"}
                 type={"password"}
                 password={true}
