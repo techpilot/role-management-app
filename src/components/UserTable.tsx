@@ -16,10 +16,21 @@ interface UserDataState {
   ];
 }
 
+interface FormatArr {
+  id: string;
+  name: string;
+}
+
 const UserTable = () => {
   const [users, setUsers] = useState<UserDataState[]>([]);
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
+
+  function formatStrings(array: FormatArr[]) {
+    const namesArray = array.map((item) => item.name);
+    const formattedNames = namesArray.join(", ");
+    return formattedNames;
+  }
 
   useEffect(() => {
     (async () => {
@@ -69,11 +80,7 @@ const UserTable = () => {
           {token && role === "admin" && (
             <p className="text-left font-medium">{user.ip_address}</p>
           )}
-          <p className="text-left font-medium">
-            {user.friends.map((friend) => (
-              <>{`${friend.name}, `}</>
-            ))}
-          </p>
+          <p className="text-left font-medium">{formatStrings(user.friends)}</p>
         </div>
       ))}
     </div>
