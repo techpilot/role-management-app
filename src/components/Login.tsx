@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import login_bg from "../assets/login_bg.png";
 import Button from "./utils/Button";
 import InputComponent from "./utils/InputComponent";
@@ -15,7 +14,6 @@ const schema = yup.object().shape({
 });
 
 const Login = () => {
-  const navigate = useNavigate();
   const [error, setError] = useState<string>();
 
   const {
@@ -43,8 +41,7 @@ const Login = () => {
       const randomString = generateRandomString();
       localStorage.setItem("token", randomString);
       localStorage.setItem("role", user.role);
-
-      navigate("/users");
+      window.location.reload();
     } else {
       setError("Incorrect username or password");
     }

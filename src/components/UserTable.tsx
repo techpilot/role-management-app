@@ -30,7 +30,13 @@ const UserTable = () => {
 
   return (
     <div className="w-full">
-      <div className="grid grid-cols-7 items-center text-[0.5rem] lg:text-xs bg-gray-50 p-2 lg:p-5 gap-28 md:gap-5 text-[#4682ba]">
+      <div
+        className={
+          role === "admin" || role === "super_user"
+            ? "grid grid-cols-7 items-center text-[0.5rem] lg:text-xs bg-gray-50 p-2 lg:p-5 gap-28 md:gap-5 text-[#4682ba]"
+            : "grid grid-cols-5 items-center text-[0.5rem] lg:text-xs bg-gray-50 p-2 lg:p-5 gap-28 md:gap-5 text-[#4682ba]"
+        }
+      >
         <p className="text-left font-semibold min-w-max">ID</p>
         <p className="text-left font-semibold min-w-max">First Name</p>
         <p className="text-left font-semibold min-w-max">Last Name</p>
@@ -47,7 +53,11 @@ const UserTable = () => {
       {users?.map((user, index) => (
         <div
           key={index}
-          className="grid grid-cols-7 items-center text-[0.5rem] lg:text-xs mb-[0.5rem] p-2 lg:p-5 gap-28 md:gap-5"
+          className={
+            role === "admin" || role === "super_user"
+              ? "grid grid-cols-7 items-center text-[0.5rem] lg:text-xs mb-[0.5rem] p-2 lg:p-5 gap-28 md:gap-5"
+              : "grid grid-cols-5 items-center text-[0.5rem] lg:text-xs mb-[0.5rem] p-2 lg:p-5 gap-28 md:gap-5"
+          }
         >
           <p className="text-left font-medium">{user.id}</p>
           <p className="text-left font-medium">{user.first_name}</p>

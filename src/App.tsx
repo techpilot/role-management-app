@@ -4,11 +4,12 @@ import "./index.css";
 import UserContainer from "./components/UserContainer";
 
 function App() {
+  const token = localStorage.getItem("token");
+
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/users" element={<UserContainer />} />
+        <Route path="/" element={token ? <UserContainer /> : <Login />} />
       </Routes>
     </div>
   );
