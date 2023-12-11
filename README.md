@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+<br />
+<div align="center">
+  <h3 align="center">Role Management App</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <p align="center">
+    A simple neatly designed application
+    <br />
+    <br />
+    ·
+    <a href="https://github.com/techpilot/role-management-app/issues">Report Bug</a>
+  </p>
+</div>
 
-## Available Scripts
+## About The Project
 
-In the project directory, you can run:
+The Role Management App a neatly implemented user interface that displays user table and there is also a role based access to the application.
 
-### `yarn start`
+## Rundown of features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Implemented a login functionality for the app.
+- Implemented a user list table that lists the data fetched using axios.
+- Implemented a role based access feature on the app.
+- Implemented a simple logout to the app.
+- Developed nice, simple and responsive user interface that works in all devices and browsers improving user experience.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Built With
 
-### `yarn test`
+- [Typescript][Typescript_url]
+- [React.js][React_js]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `yarn build`
+Setup and run this project in your computer.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ```sh
+  sudo apt install nodejs
+  ```
 
-### `yarn eject`
+- yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  ```sh
+  npm install --global yarn
+  ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Typescript
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  ```sh
+  yarn add typescript --dev
+  ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Installation
 
-## Learn More
+1. Clone the repo
+   ```sh
+   git clone https://github.com/techpilot/role-management-app
+   ```
+2. Install packages
+   ```sh
+   yarn
+   ```
+3. Run the project
+   ```sh
+   yarn start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[React_js]: https://react.dev/
+[Typescript_url]: https://www.typescriptlang.org/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contact
+
+Project Link: [https://github.com/techpilot/role-management-app](https://github.com/techpilot/role-management-app)
